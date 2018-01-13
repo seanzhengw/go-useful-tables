@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/seanzhengw/go-useful-tables/session"
 	"github.com/seanzhengw/go-useful-tables/user"
 
 	// DB driver
@@ -32,6 +33,7 @@ func initTablesPairs() {
 	tablesPairs["user_detail"] = tablesPair{name: "user_detail", createFunc: user.CreateDetail}
 	tablesPairs["user_emails"] = tablesPair{name: "user_emails", createFunc: user.CreateEmails}
 	tablesPairs["user_emails_no_id"] = tablesPair{name: "user_emails", createFunc: user.CreateEmailsWithoutID}
+	tablesPairs["session"] = tablesPair{name: "session", createFunc: session.CreateTable}
 }
 
 func printTableNames() {
